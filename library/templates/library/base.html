@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Book Manager{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'library/css/styles.css' %}">
+</head>
+<body>
+    <header>
+        {% block sidebar %}
+            {% include 'library/nav.html' %}
+        {% endblock %}
+    </header>
+    <div id="content">
+        
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <script src="{% static 'library/js/scripts.js' %}"></script>
+</body>
+</html>

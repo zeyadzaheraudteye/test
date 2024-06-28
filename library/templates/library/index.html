@@ -1,0 +1,19 @@
+{% extends "library/base.html" %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<h2>Book List</h2>
+<ul>
+    {% for book in books %}
+        <li>
+            <div>
+                {{ book.title }} - Published on: {{ book.published_date|date:"Y-m-d" }} <br>
+                <span>author: {{ book.author }}</span>
+            </div>
+        </li>
+    {% empty %}
+        <li>No books available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
